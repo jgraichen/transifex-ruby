@@ -11,6 +11,22 @@ module Transifex
       @slug = transifex_data[:slug]
     end
 
+    def details
+      @details || details!
+    end
+
+    def details!
+      @details = client.get("/project/#{@project_slug}/resource/#{@slug}?details")
+    end
+
+    def stats
+      @stats || stats!
+    end
+
+    def stats!
+      @stats = client.get("/project/#{@project_slug}/resource/#{@slug}/stats/")
+    end
+
     def content
       client.get("/project/#{@project_slug}/resource/#{@slug}/content/")
     end

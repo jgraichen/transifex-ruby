@@ -9,6 +9,14 @@ module Transifex
       @slug = transifex_data[:slug]
     end
 
+    def details
+      @details || details!
+    end
+
+    def details!
+      @details = client.get("/project/#{@slug}?details")
+    end
+
     def resources
       client.get("/project/#{@slug}/resources/").map do |resource|
         Transifex::Resource.new(@slug, resource).tap {|r| r.client = client }
