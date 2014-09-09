@@ -6,7 +6,7 @@ require 'transifex/version'
 
 Gem::Specification.new do |s|
   s.version       = Transifex::VERSION
-  s.name          = 'transifex-ruby'
+  s.name          = 'transifex-ruby-fork-jg'
   s.license       = 'MIT'
   s.homepage      = 'http://github.com/tmaesaka/transifex-ruby'
   s.summary       = 'Ruby client library for Transifex API'
